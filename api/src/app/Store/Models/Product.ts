@@ -1,8 +1,7 @@
-
 class Product {
-    public readonly id;
-    public readonly name;
-    public readonly price;
+    public readonly id: string;
+    public readonly name: string;
+    public readonly price: number;
 }
 
 export default Product;

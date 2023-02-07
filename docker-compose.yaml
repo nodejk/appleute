@@ -17,12 +17,11 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./frontend/Dockerfile
     # env_file:
     #   - ./frontend/.env
     volumes:
-      - ./frontend:/app
-    environment:
-      - PORT:3000
+      - ./frontend:/frontend
+      - /frontend/node_modules
     ports:
-      - 127.0.0.1:5000:5000
+      - 127.0.0.1:3000:3000
