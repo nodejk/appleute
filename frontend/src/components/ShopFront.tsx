@@ -70,9 +70,7 @@ class ShopFront extends React.Component<Props, ShopState> {
     
     private addToCart(product: Product): void {
         this.props.addToCart(ActionTypes.addProductToCart(product));
-        console.log(this.props.cart);
-        Api.Cart.addProduct(product).then(response => {
-        })
+        Api.Cart.addProduct(product).then(response => {});
     }
 
     private removeFromCart(product: Product): void {
@@ -82,7 +80,7 @@ class ShopFront extends React.Component<Props, ShopState> {
     private handleOpen(): void {
         this.setState({
             popupModal: true,
-        })
+        });
     }
 
     private handleClose(): void {

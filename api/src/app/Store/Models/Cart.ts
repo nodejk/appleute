@@ -12,7 +12,7 @@ class Cart {
         return Promise.resolve();
     }
 
-    async addProduct(product: Product) { 
+    async addProduct(product: Product) {
         this.products.push(product);
     }
 }

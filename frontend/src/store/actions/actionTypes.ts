@@ -13,7 +13,7 @@ const STORE: string = 'STORE';
 export const ADD_PRODUCT_TO_CART: string = `${CART}/${PRODUCT}/${POST}`;
 export const REMOVE_PRODUCT_FROM_CART: string = `${CART}/${REMOVE}`;
 export const GET_CART: string = `${CART}/${GET}`;
-export const PLACE_CART_ORDER: string = `${CART}/${POST}`
+export const PLACE_CART_ORDER: string = `${CART}/${POST}`;
 
 export const GET_USERS = `${USER}/${GET}`;
 export const LOGIN_USER = `${USER}/${LOGIN}`;

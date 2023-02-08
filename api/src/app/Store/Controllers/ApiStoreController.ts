@@ -1,4 +1,4 @@
-import { JsonController, Get, QueryParam, Post, BodyParam, Authorized } from 'routing-controllers';
+import { JsonController, Get, Post, BodyParam } from 'routing-controllers';
 import { Service } from 'typedi';
 import Product from '../Models/Product';
 import Cart from '../Models/Cart';
@@ -15,19 +15,22 @@ export class ApiStoreController {
 
     @Get('/detail')
     public async getCart(): Promise<any> {
-        return ""
+        return '';
     }
 
     @Post('/order')
-    public async placeOrder(@BodyParam('products') products: CartProduct[]): Promise<any> {
-        console.log(products);
-        return "Order Successful";
+    public async placeOrder(
+        @BodyParam('products') products: CartProduct[],
+    ): Promise<any> {
+        return 'Order Successful';
     }
 
     @Post('/add-product')
-    public async addProduct(@BodyParam('product') product: Product): Promise<any> {
+    public async addProduct(
+        @BodyParam('product') product: Product,
+    ): Promise<any> {
         this.cart.addProduct(product);
-        return "Product Added";
+        return 'Product Added';
     }
 
     @Get('/products')

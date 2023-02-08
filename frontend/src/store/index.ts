@@ -7,9 +7,9 @@ import { Cart } from '../models/Cart';
 import { Shop } from '../models/Shop';
 
 export interface AppProps {
-    userStore: User,
-    cartStore: Cart,
-    shopStore: Shop,
+    userStore: User;
+    cartStore: Cart;
+    shopStore: Shop;
 }
 
 export const store = createStore(rootReducer);

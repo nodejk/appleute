@@ -25,7 +25,7 @@ class EnvironmentProvider {
             PORT: 8080,
             HOST_NAME: 'app',
             API_ROUTE: 'api',
-        }
+        };
     }
 }
 

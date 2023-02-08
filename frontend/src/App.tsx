@@ -20,7 +20,7 @@ interface AppState {
 class App extends React.Component<Props, AppState> {
 	constructor(props: Props) {
 		super(props);
-		this.state = {user: this.props.user}
+		this.state = {user: this.props.user};
 	}
 
 	render() {
