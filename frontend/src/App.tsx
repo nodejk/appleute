@@ -1,26 +1,43 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Store from './components/Store';
+import Shop from './components/ShopFront';
+import { User } from './models/User';
+import { AppProps, store } from './store';
+import { connect } from 'react-redux';
+import Login from './components/Login';
+import { v4 as uuid } from 'uuid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {
+	user: User;
 }
 
-export default App;
+interface AppState {
+	user: User;
+}
+
+class App extends React.Component<Props, AppState> {
+	constructor(props: Props) {
+		super(props);
+		this.state = {user: this.props.user}
+	}
+
+	render() {
+		return (
+		<div className="App">
+			<header className="App-header">
+			{this.props.user.isLoggedIn ? <Shop/>: <Login/>}
+			</header>
+		</div>
+		);
+	} 
+}
+
+const mapStateToProps = (state: AppProps) => {
+    return {
+        user: state.userStore,
+    }
+}
+
+export default connect(mapStateToProps)(App);

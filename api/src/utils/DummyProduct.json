@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": 23,
+            "name": "Orange Essence Food Flavou",
+            "price": 14,
+            "category": "life-style"
+        },
+        {
+            "id": 24,
+            "name": "cereals muesli fruit nuts",
+            "price": 46,
+            "category": "grocery"
+        },
+        {
+            "id": 25,
+            "name": "Gulab Powder 50 Gram",
+            "price": 70,
+            "category": "snack"
+        },
+        {
+            "id": 26,
+            "name": "Plant Hanger For Home",
+            "price": 41,
+            "category": "life-style"
+        },
+        {
+            "id": 27,
+            "name": "Flying Wooden Bird",
+            "price": 51,
+            "category": "life-style"
+        },
+        {
+            "id": 28,
+            "name": "3D Embellishment Art Lamp",
+            "price": 20,
+            "category": "life-style"
+        },
+        {
+            "id": 29,
+            "name": "Handcraft Chinese style",
+            "price": 60,
+            "category": "grocery"
+        },
+        {
+            "id": 30,
+            "name": "Key Holder",
+            "price": 30,
+            "category": "snack"
+        }
+    ]
+}

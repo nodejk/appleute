@@ -1,5 +1,6 @@
 import { Product } from '../../models/Product';
 import { User } from '../../models/User';
+import { Shop } from '../../models/Shop';
 import * as ActionTypes from './actionTypes';
 
 export interface action {
@@ -7,22 +8,30 @@ export interface action {
     payload: any,
 }
 
-export function addProductToCart(payload: {product: Product}) {
-    return {type: ActionTypes.ADD_PRODUCT_TO_CART, payload};
+export function addProductToCart(payload: Product) {
+    return {type: {type: ActionTypes.ADD_PRODUCT_TO_CART, payload}};
+}
+
+export function removeProductFromCart(payload: Product) {
+    return {type: {type: ActionTypes.REMOVE_PRODUCT_FROM_CART, payload}};
 }
 
 export function getCart() {
-    return {type: ActionTypes.GET_CART};
+    return {type: {type: ActionTypes.GET_CART}};
 }
 
 export function placeCartOrder() {
-    return {type: ActionTypes.PLACE_CART_ORDER};
+    return {type: {type: ActionTypes.PLACE_CART_ORDER}};
 }
 
 export function getUsers() {
-    return {type: ActionTypes.GET_USERS};
+    return {type: {type: ActionTypes.GET_USERS}};
 }
 
-export function loginUser(payload: {user: User}) {
-    return {type: ActionTypes.LOGIN_USER, payload};
+export function loginUser() {
+    return {type: {type: ActionTypes.LOGIN_USER}};
+}
+
+export function setAllProducts(payload: any) {
+    return {type: {type: ActionTypes.GET_ALL_PRODUCTS, payload}};
 }

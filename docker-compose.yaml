@@ -1,27 +1,26 @@
 version: '3.2'
 
 services:
-  # api:
-  #   build:
-  #     context: .
-  #     dockerfile: ./api/Dockerfile
-  #   env_file:
-  #     - .env
-  #   volumes:
-  #     - ./api:/api
-  #   environment:
-  #     - PORT:8080
-  #   ports:
-  #     - 127.0.0.1:5000:5000
-
-  frontend:
+  api:
     build:
       context: .
-      dockerfile: ./frontend/Dockerfile
-    # env_file:
-    #   - ./frontend/.env
+      dockerfile: ./api/Dockerfile
     volumes:
-      - ./frontend:/frontend
-      - /frontend/node_modules
+      - ./api:/api
+      - /api/node_modules
+    environment:
+      - PORT:8080
     ports:
-      - 127.0.0.1:3000:3000
+      - 127.0.0.1:8080:8080
+
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: ./frontend/Dockerfile
+  #   # env_file:
+  #   #   - ./frontend/.env
+  #   volumes:
+  #     - ./frontend:/frontend
+  #     - /frontend/node_modules
+  #   ports:
+  #     - 127.0.0.1:3000:3000

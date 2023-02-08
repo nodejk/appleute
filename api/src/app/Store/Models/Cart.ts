@@ -1,19 +1,20 @@
 import { Service } from 'typedi';
 import Product from './Product';
 
-@Service()
 class Cart {
     private products: Product[];
 
-    async getProductsByUser(): Promise<any> {
-        return Promise.resolve();
+    constructor() {
+        this.products = [];
     }
 
     async createOrder(): Promise<any> {
         return Promise.resolve();
     }
-    
 
+    async addProduct(product: Product) { 
+        this.products.push(product);
+    }
 }
 
 export default Cart;

@@ -1,8 +1,5 @@
-import { Product } from './Product';
+import { CartProduct } from "./CartProduct";
 
 export interface Cart {
-    products: {
-       product: Product,
-       quantity: number, 
-    }[];
+    products: CartProduct[];
 }

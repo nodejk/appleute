@@ -1,13 +1,18 @@
 import User from "../Models/User";
+import { JsonController, Get, QueryParam, Post, BodyParam } from 'routing-controllers';
+import { Service } from 'typedi';
 
+@JsonController('/user')
+@Service()
 class ApiUserController {
-
-    constructor(route: string) {
-        this.login();
+    @Post('/login')
+    public async login(@BodyParam('firstName') firstName: string): Promise<any> {
+        const user = new User();
+        return user.login(firstName);
     }
 
-    private login(): string {
-
+    @Post('/logout')
+    public async logout(): Promise<any> {
         return "here";
     }
 }
