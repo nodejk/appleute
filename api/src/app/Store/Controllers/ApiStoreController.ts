@@ -27,7 +27,7 @@ export class ApiStoreController {
     @Post('/add-product')
     public async addProduct(@BodyParam('product') product: Product): Promise<any> {
         this.cart.addProduct(product);
-        return this.cart;
+        return "Product Added";
     }
 
     @Get('/products')

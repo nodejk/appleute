@@ -21,7 +21,7 @@ const CartService = {
         method: 'POST',
         url: `${baseRoute}${store}${addProduct}`,
         data: {
-         product: product,
+            products: product,
         }, 
      }).then(response => {
          return response.data;

@@ -11,7 +11,10 @@ const UserService = {
        method: 'POST',
        url: `${baseRoute}${user}${login}`,
        data: {
-            user: userPayload,
+            user: {
+                firstName: userPayload.firstName,
+                lastName: userPayload.lastName,
+            },
        }, 
     }).then(response => {
         return response.data;
